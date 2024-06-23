@@ -1,6 +1,6 @@
 #include "vertex_buffer.h"
 
-VertexBuffer::VertexBuffer(void *data, uint32 numVertices) {
+VertexBuffer::VertexBuffer(void* data, uint32 numVertices) {
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
 

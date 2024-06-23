@@ -2,7 +2,7 @@
 #include <fstream>
 #include <iostream>
 
-Shader::Shader(const char *vertexShaderFilename, const char *fragmentShaderFilename) {
+Shader::Shader(const char* vertexShaderFilename, const char* fragmentShaderFilename) {
     shaderId = createShader(vertexShaderFilename, fragmentShaderFilename);
 }
 
@@ -18,7 +18,7 @@ void Shader::unbind() {
     glUseProgram(0);
 }
 
-std::string Shader::parse(const char *filename) {
+std::string Shader::parse(const char* filename) {
     FILE* file;
     file = fopen(filename, "rb");
     if(file == nullptr) {
@@ -58,7 +58,7 @@ GLuint Shader::compile(std::string shaderSource, GLenum type) {
     return id;
 }
 
-GLuint Shader::createShader(const char *vertexShaderFilename, const char *fragmentShaderFilename) {
+GLuint Shader::createShader(const char* vertexShaderFilename, const char* fragmentShaderFilename) {
     std::string vertexShaderSource = parse(vertexShaderFilename);
     std::string fragmentShaderSource = parse(fragmentShaderFilename);
 
